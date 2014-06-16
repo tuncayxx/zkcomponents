@@ -1,0 +1,4 @@
+<window>
+	<image src="/img/zklogo.png" zclass="img-responsive" />
+	<label value="Bienvenido" />
+</window>

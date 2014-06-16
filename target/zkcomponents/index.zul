@@ -1,8 +1,6 @@
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap.css"?>
+<?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="template/template.zul"?>
 <zk>
-	<window apply="org.zkoss.bind.BindComposer"
-		viewModel="@id('vm')@init('com.foo.zkcomponents.MyViewModel')"
-		validationMessages="@id('vmsgs')">
-		<hlayout>count: <label value="@load(vm.count)" /></hlayout>
-		<button label="add" onClick="@command('cmd')"/>
-	</window>
+	<include id="mainInclude" self="@define(content)" src="template/home.zul" />
 </zk>

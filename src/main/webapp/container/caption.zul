@@ -1,0 +1,11 @@
+    <window>
+         <caption label="This is a caption"/>
+            <groupbox>
+                 <caption label="fruits"/>
+                 <radiogroup onCheck="fruit.value = self.selectedItem.label">
+                    <radio label="Apple"/>
+                 <radio label="Orange"/>
+                 <radio label="Banana"/>  
+                 </radiogroup>
+            </groupbox>
+    </window>
