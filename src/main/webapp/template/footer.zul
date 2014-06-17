@@ -1,1 +1,5 @@
-<window title="Footer" border="none" ></window>
+<div align="center">
+<vbox>
+    <label value="Dashboard v. 1.0" />
+</vbox>
+</div>

@@ -1,15 +1,17 @@
-<zk zclass="container">
-	<vlayout>
-		<include src="template/header.zul" />
+<div zclass="container">
 
-		<hlayout zclass="row">
-			<vlayout zclass="col-sm-12 col-md-4 col-lg-3">
-				<navbar id="sidebar" orient="vertical" >
+	<include src="template/header.zul" />
+
+	<div zclass="row">
+		<div id="sidebar" sclass="col-sm-4 col-md-3 col-lg-3">
+				<navbar id="navbar" orient="vertical" sclass="nav-list">
 					<navitem label="Inbox" iconSclass="z-icon-inbox" />
 					<navitem label="Create New Task" iconSclass="z-icon-pencil"/>
+					<navitem id="calitem" label="Calendar" iconSclass="z-icon-calendar" sclass="notify" tooltip="calpp, position=end_center, delay=0"/>
+
 					<navseparator/>
 					<nav label="Next Actions" iconSclass="z-icon-th-list" badgeText="4">
-							<navitem label="Rescue the Baby" iconSclass="z-icon-star"/>
+							<navitem label="Rescue the Baby" iconSclass="z-icon-star" sclass="grey" />
 							<navitem label="Play Darts" />
 							<navitem label="Plant Flowers" />
 							<navitem label="Wash the Car" iconSclass="z-icon-star"/>
@@ -19,21 +21,20 @@
 							<navitem label="Hide and Seek" />
 					</nav>
 					<nav label="Done" iconSclass="z-icon-archive">
-							<navitem label="Go to the Park" disabled="true"/>
-							<navitem label="Badminton Game" disabled="true"/>
-							<navitem label="Buy the Ticket" disabled="true"/>
+							<navitem label="Go to the Park" />
+							<navitem label="Badminton Game" />
+							<navitem label="Buy the Ticket" />
 							<navitem label="Return the U-Bike" disabled="true"/>
 					</nav>
 				</navbar>
-			</vlayout>
-			<vlayout>
-				<include src="template/navbar.zul" />
-				<hlayout id="mainContent" self="@insert(content)" apply="org.zkoss.zknavdemo.NavController" zclass="col-sm-12 col-md-8 col-lg-6">
-			    </hlayout>
-		    </vlayout>
-			<include src="template/help.zul" zclass="col-sm-12 col-md-6 col-lg-3 visible-lg" />
-		</hlayout>
-	
-		<include src="template/footer.zul" />
-	</vlayout>
-</zk>
+		</div>
+		<div zclass="col-sm-8 col-md-9 col-lg-6">
+			<include src="template/navbar.zul" />
+			<hlayout id="mainContent" self="@insert(content)" apply="com.foo.zkcomponents.NavController">
+		    </hlayout>
+	    </div>
+		<include src="template/help.zul" zclass="col-lg-3 visible-lg" />
+	</div>
+
+	<include src="template/footer.zul" zclass="footer navbar" />	
+</div>

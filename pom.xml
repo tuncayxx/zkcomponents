@@ -40,7 +40,8 @@
 			<url>http://mavensync.zkoss.org/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
-<dependencies>
+	
+	<dependencies>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkbind</artifactId>
@@ -61,13 +62,18 @@
 			<artifactId>zhtml</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zul</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -85,7 +91,30 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<!-- Run with Jetty -->
+		
+			<!-- Add zkless-engine-maven-plugin -->
+	        <plugin>
+	            <groupId>org.zkoss.maven</groupId>
+	            <artifactId>zkless-engine-maven-plugin</artifactId>
+	            <version>0.8.3</version>
+	            <executions>
+	                <execution>
+	                    <id>compile-less</id>
+	                    <goals>
+	                        <goal>lessc</goal>
+	                    </goals>
+	                    <configuration>
+	                        <!-- LESS source folder -->
+	                        <sourceDirectory>${project.basedir}/src/main/webapp/less</sourceDirectory>
+	                        <!-- *.CSS.DSP output folder -->
+	                        <outputDirectory>${project.basedir}/src/main/webapp/less</outputDirectory>
+	                    </configuration>
+	                </execution>
+	            </executions>
+	        </plugin>
+
+
+			<!-- Run with Jetty 
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
@@ -116,6 +145,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
+
 			<!-- Compile java -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -153,7 +184,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>  
 				 <groupId>org.apache.tomcat.maven</groupId>  
 				 <artifactId>tomcat7-maven-plugin</artifactId>  
@@ -166,7 +197,7 @@
 					  <password>admin</password> 
 				 </configuration>  
 			</plugin> 
-			
+
 		</plugins>
 	</build>
 </project>

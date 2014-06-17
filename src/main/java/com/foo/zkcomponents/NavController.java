@@ -14,14 +14,14 @@ public class NavController extends SelectorComposer<Component> {
 	private static final long serialVersionUID = 1L;
 
 	@Wire
-	private Navbar sidebar;
+	private Navbar navbar;
 	
 	@Wire
 	private Include mainInclude;
 	
-	@Listen("onSelect = #sidebar")
+	@Listen("onSelect = #navbar")
 	public void doSelect () {
-		Navitem item = sidebar.getSelectedItem();
+		Navitem item = navbar.getSelectedItem();
 		String label = item.getLabel(),
 				icon = item.getIconSclass();
 		if ("Inbox".equals(label)) {

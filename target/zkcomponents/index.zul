@@ -1,6 +1,13 @@
-<?link rel="stylesheet" type="text/css" href="/css/bootstrap.css"?>
-<?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<?page title="Dashboard - ZK Admin"?>
+<!-- Cargando Bootstrap  -->
+<?link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css"?>
+
+<!--Cargando estilo personalizado -->
+<?link rel="stylesheet" type="text/css" href="less/index.css.dsp"?>
+
+<!-- Cargando la plantilla -->
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="template/template.zul"?>
-<zk>
+
+<zk xmlns:n="native">
 	<include id="mainInclude" self="@define(content)" src="template/home.zul" />
 </zk>

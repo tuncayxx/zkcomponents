@@ -1,4 +1,63 @@
-<window>
-	<image src="/img/zklogo.png" zclass="img-responsive" />
-	<label value="Bienvenido" />
-</window>
+<zk xmlns:n="native">
+        <a label="Sortable Lists" iconSclass="z-icon-list" sclass="green lighter rcaption"/>
+        <listbox id="lb" sclass="task" checkmark="true" multiple="true">
+          <listhead>
+              <listheader/>
+              <listheader width="100px"/>
+          </listhead>
+          <listitem draggable="true" droppable="true" sclass="task-orange">
+            <listcell label="Answering customer questions" sclass="text"/>
+            <listcell>
+              <n:div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42" 
+              style="width:30px;height:30px;line-height:30px;">
+                <n:span class="percent">42</n:span>%
+              </n:div>
+            </listcell>
+          </listitem>
+          <listitem draggable="true" droppable="true" sclass="task-red">
+            <listcell label="Fixing bugs" sclass="text"/>
+            <listcell>
+              <div sclass="pull-right action">
+                <a iconSclass="z-icon-pencil blue" href="#"/>
+                <a iconSclass="z-icon-trash-o red" href="#"/>
+                <a iconSclass="z-icon-flag green" href="#"/>
+              </div>
+            </listcell>
+          </listitem>
+          <listitem draggable="true" droppable="true" sclass="task-default">
+            <listcell label="Adding new features" sclass="text"/>
+            <listcell/>
+          </listitem>
+          <listitem draggable="true" droppable="true" sclass="task-blue">
+            <listcell label="Upgrading scripts used in template" sclass="text"/>
+            <listcell>
+              <button sclass="btn btn-minier bigger btn-primary pull-right" iconSclass="z-icon-cog icon-only"
+                popup="cogtt, position=after_end, type=toggle"/>
+            </listcell>
+          </listitem>
+          <listitem draggable="true" droppable="true" sclass="task-grey">
+            <listcell label="Add new skins" sclass="text"/>
+            <listcell/>
+          </listitem>
+          <listitem draggable="true" droppable="true" sclass="task-green">
+            <listcell label="Updating server software up" sclass="text"/>
+            <listcell/>
+          </listitem>
+          <listitem draggable="true" droppable="true" sclass="task-pink">
+            <listcell label="Cleaning up" sclass="text"/>
+            <listcell/>
+          </listitem>
+        </listbox>
+        <popup id="cogtt" sclass="cog">
+          <a iconSclass="z-icon-check green bigger-110" tooltip="markpp, position=start_center, delay=0"/>
+          <a iconSclass="z-icon-trash-o red bigger-110" tooltip="delepp, position=start_center, delay=0"/>
+        </popup>
+        <popup id="markpp" zclass="tooltip" sclass="tooltip-success left">
+          <span zclass="tooltip-arrow"/>
+          <label zclass="tooltip-inner" value="Mark as done"/>
+        </popup>
+        <popup id="delepp" zclass="tooltip" sclass="tooltip-error left">
+          <span zclass="tooltip-arrow"/>
+          <label zclass="tooltip-inner" value="Delete"/>
+        </popup>
+</zk>
